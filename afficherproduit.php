@@ -1,5 +1,4 @@
-
-                    <?PHP
+   <?PHP
                     include "../core/produitC.php";
                     $produit1C=new ProduitC();
                     $listeproduits=$produit1C->afficherproduits();
@@ -24,14 +23,14 @@ foreach($listeproduits as $row){
   <td><?PHP echo $row['quantiteP']; ?></td>
   <td><?PHP echo $row['description']; ?></td>
   <td><?PHP echo $row['prix']; ?></td>
-  <td><a><img class="" src="images/portfolio/<?php echo $row['image'];?>" style="width: 100px; height:100px;"></a></td>
+  <td><a><img class="" src="<?php echo $row['image'];?>" style="width: 100px; height:100px;"></a></td>
   <td><form method="POST" action="supprimerproduit.php">
   <input type="submit" name="supprimer" value="supprimer">
   <input type="hidden" value="<?PHP echo $row['idP']; ?>" name="idP">
   </form>
   </td>
   <td><a href="modifierproduit.php?idP=<?PHP echo $row['idP']; ?>">
-  <input type="submit" name="modifier" value="modifier"></a></td>
+  Modifier</a></td>
   </tr>
   <?PHP
 }
